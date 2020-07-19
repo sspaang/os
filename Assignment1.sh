@@ -12,7 +12,7 @@ do
 	echo -e "|	\033[31m2. Move files\033[m	 		  |"
 	echo -e "|	\033[34m3. Play 'Number random game'\033[m	  |"
 	echo "+-----------------------------------------+"
-	read -p "Enter number to choose what do you want to do: " cnum
+	read -p "Enter number to continue: " cnum
 	clear
 
 	if [ $cnum -eq 1 ]
@@ -41,7 +41,7 @@ do
 			read -p "Guess my number (1-100): " gnum
 			if [ $gnum -eq $random ]
 			then
-				echo -e "\033[6mCorrect! Why are you so brilliant :D\033[m"
+				echo -e "\033[32mCorrect! Why are you so brilliant :D\033[m"
 				echo ""
 				echo "=========================================="
 				break
