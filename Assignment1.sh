@@ -18,7 +18,7 @@ do
 	if [ $cnum -eq 1 ]
 	then
 		echo -e "+---------\033[1mDATE\033[m---------+"
-		date +"|  %A %d %B %Y |"	#BC
+		date +"|  %A %d %B %Y |"	#A.D.
 		BEyear=$(date +"%Y")
 		C_BEyear=$(( $BEyear + 543 ))
 		date +"|  %A %d %B $C_BEyear |"
