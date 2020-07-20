@@ -36,9 +36,6 @@ goto whileCorrectNum
 :Menu02
 cls
 echo Menu:02
-setlocal enabledelayedexpansion
-set delFolderPath=put_file_in_here_to_test_menu2
-pushd %delFolderPath%
 :Perm
 set /p Perm=Keep any file?(y/n)
 if %Perm% == y (goto chooseFile) 
@@ -47,8 +44,10 @@ if %Perm% == n (goto deleteAll) else (goto Perm)
 set /p PointFile=File name:
 set /p typeFile=Type:
 attrib +r %PointFile%.%typeFile%
+attrib +r assignment_bat.bat
 del *.*
 attrib -r %PointFile%.%typeFile%
+attrib +r assignment_bat.bat
 goto gate
 :deleteAll
 del *.*
