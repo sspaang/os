@@ -6,7 +6,7 @@ goto Menu01
 :whileCorrectNum
 echo Press 1 to go menu 1 : Display Date BE and BC
 echo Press 2 to go menu 2 : Move all files in any subfolder to parentfolder
-echo Press 3 to go menu 3 : Dice Roller Until dawn
+echo Press 3 to go menu 3 : Guessing Number Until Dawn
 echo Press 4 to exit
 set /p input=Select Menu:
 if %input% == 1 goto Menu01
@@ -36,6 +36,9 @@ goto whileCorrectNum
 :Menu02
 cls
 echo Menu:02
+:: หลักการทำงาน
+:: นำไฟล์นี้ไปวางข้างนอกโฟล์เดอร์ย่อย
+:: หลังทำงานจะดึงไฟล์ที่อยู่ในโฟล์เดอร์ย่อยทั้งหมดออกมาที่เดียวกับไฟล์นี้
 set parFolder="%cd%"
 FOR /r %parFolder% %%d in (*.*) do move "%%d" %parFolder% 
 ECHO Done
@@ -44,26 +47,19 @@ goto whileCorrectNum
 :Menu03
 cls
 echo Menu:03
-:inputNumber
-set /p input=Your predict number(2-12):
-if %input% lss 2 goto inputNumber
-if %input% gtr 12 goto inputNumber 
-set /a counter = 1
+set /a rand=%random% %%100 +1
 :whileLoop
-set /a dice01=%random% %%6 +1
-set /a dice02=%random% %%6 +1
-set /a sumDice = %dice01%+%dice02%
-echo =====================
-echo Dice1 : %dice01%
-echo Dice2 : %dice02%
-echo Sum of both dice : %sumDice%
-if %input% neq %sumDice% (
-	set /a counter = counter +1
-	::echo %counter%
+set /p input=Guess a Number: 
+set /a Evaluated=%input%
+if %Evaluated% neq %input% (goto whileLoop)
+if %input% lss %rand% (
+	echo Greater than that
 	goto whileLoop
 )
+if %input% gtr %rand% (
+	echo lesser than that
+	goto whileLoop
+) else (echo Correct)
 echo =====================
-echo The time has come and so have I...
-echo Counter : %counter%
 goto whileCorrectNum
 ::>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
