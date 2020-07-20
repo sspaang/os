@@ -47,7 +47,7 @@ attrib +r %PointFile%.%typeFile%
 attrib +r assignment_bat.bat
 del *.*
 attrib -r %PointFile%.%typeFile%
-attrib +r assignment_bat.bat
+attrib -r assignment_bat.bat
 goto gate
 :deleteAll
 del *.*
