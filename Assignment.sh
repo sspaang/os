@@ -42,9 +42,10 @@ do
 	if [ $cnum -eq 1 ]
 	then
 		echo -e "+---------\033[1mDATE\033[m---------+"
-		date +"|  %A %d %B %Y |"
-		BEyear=2563
-		date +"|  %A %d %B $BEyear |"
+		date +"|  %A %d %B %Y |"	#BC
+		BEyear=$(date +"%Y")
+		C_BEyear=$(( $BEyear + 543 ))
+		date +"|  %A %d %B $C_BEyear |"
 		echo "+----------------------+"
 	# Menu 2: Delete files except specific file and .sh
 	elif [ $cnum -eq 2 ]

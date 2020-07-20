@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#GROUP NO. start:19-07-2020 finish:
+#GROUP NO. start:19-07-2020 finish:19-07-2020
 
 #========MENU===========
 while true
@@ -18,9 +18,10 @@ do
 	if [ $cnum -eq 1 ]
 	then
 		echo -e "+---------\033[1mDATE\033[m---------+"
-		date +"|  %A %d %B %Y |"
-		BEyear=2563
-		date +"|  %A %d %B $BEyear |"
+		date +"|  %A %d %B %Y |"	#BC
+		BEyear=$(date +"%Y")
+		C_BEyear=$(( $BEyear + 543 ))
+		date +"|  %A %d %B $C_BEyear |"
 		echo "+----------------------+"
 	elif [ $cnum -eq 2 ]
 	then
