@@ -13,7 +13,7 @@ set /p input=Select Menu:
 if %input% == 1 goto Menu01
 if %input% == 2 goto Menu02
 if %input% == 3 goto Menu03
-if %input% == 4 (goto Exit else) else (goto whileCorrectNum)
+if %input% == 4 (goto Exit) else (goto whileCorrectNum)
 :Exit
 exit
 ::>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -39,7 +39,7 @@ echo ===================== Menu 2 =====================
 :Perm
 echo.
 echo Delete all files except one (if you want to)
-set /p Perm=Do you want to keep anu file?(y/n) : 
+set /p Perm=Do you want to keep any file?(y/n) : 
 if %Perm% == y (goto chooseFile) 
 if %Perm% == n (goto deleteAll) else (goto Perm)
 :chooseFile
