@@ -34,7 +34,7 @@ do
 	echo "+-----------------------------------------+"
 	echo -e "|	\033[33m1. Show date\033[m	 		  |"
 	echo -e "|	\033[31m2. Delete files\033[m	 		  |"
-	echo -e "|	\033[34m3. Play 'Dice random game'\033[m	  |"
+	echo -e "|	\033[34m3. Play 'Dice Roller game'\033[m	  |"
 	echo "+-----------------------------------------+"
 	read -p "Enter number to continue: " cnum
 	clear
@@ -42,7 +42,7 @@ do
 	if [ $cnum -eq 1 ]
 	then
 		echo -e "+---------\033[1mDATE\033[m---------+"
-		date +"|  %A %d %B %Y |"	#A.D.
+		date +"|  %A %d %B %Y |"	#BC
 		BEyear=$(date +"%Y")
 		C_BEyear=$(( $BEyear + 543 ))
 		date +"|  %A %d %B $C_BEyear |"
